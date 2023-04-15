@@ -19,34 +19,77 @@
         <div class="right-cadastro">
             <div class="card-cadastro">
                 <h1>CADASTRO DA EMPRESA</h1>
-                <div class="text-field">
+                <div id = "div_cpnj" class="text-field">
                     <label for="cnpj">CNPJ</label>
-                    <input type="number" id="CNPJ" placeholder="CNPJ">          <!-- colocar exemplos nos placeholders, tel = (xx)xxxx-xxxx -->
+                    <input type="text" id="input_CNPJ" class = "" placeholder="XX.XXX.XXX/XXXX-XX">
                 </div>
-                <div class="text-field">
+                <div id = "div_empresa" class="text-field">
                     <label for="empresa">Empresa</label>
-                    <input type="text" id="empresa" placeholder="Empresa">
+                    <input type="text" id="input_empresa" class = "" placeholder="ex: Cheese Tech">
                 </div>
-                <div class="text-field">
+                <div id = "div_email" class="text-field">
                     <label for="email">Email empresarial</label>
-                    <input type="text" id="email_empresarial" placeholder="Email empresarial">
+                    <input type="text" id="input_email_empresarial" class = "" placeholder="ex: email@empresarial.com">
                 </div>
-                <div class="text-field">
+                <div id = "div_telefone" class="text-field">
                     <label for="telefone">Telefone</label>
-                    <input type="number" id="telefone" placeholder="Telefone">
+                    <input type="text" id="input_telefone" class = "" placeholder="(XX)XXXXX-XXXX">
                 </div>
-                <div class="text-field">
+                <div id = "div_cep" class="text-field">
                     <label for="cep">CEP</label>
-                    <input type="number" id="CEP" placeholder="CEP">
+                    <input type="text" id="input_CEP" class = "" placeholder="XXXXX-XXX">
                 </div>
-                <div class="text-field">
+                <div id = "div_qtd" class="text-field">
                     <label for="Qtd Câmara">Número de Câmaras</label>
-                    <input type="number" id="câmaras" placeholder="Número de Câmaras">
+                    <input type="number" id="input_câmaras" class = "" placeholder="ex: 5">
                 </div>
-                <button class="botao-cadastro">Registrar Empresa</button>
+                <button onclick='cadastro()' class="botao-cadastro">Registrar Empresa</button>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+<script>
+    function cadastro() {
+
+        var cnpj = input_CNPJ.value
+        var empresa = input_empresa.value
+        var emailemp = input_email_empresarial.value
+        var telefone = input_telefone.value
+        var cep = input_CEP.value
+        var camara = input_câmaras.value
+
+        if (cnpj == "" || empresa == "" || emailemp == "" || telefone == "" || cep == "" || camara == "") {
+            alert('complete todos os campos')
+        } else {
+            if (cnpj.length != 14 || cnpj.indexOf('.') == -1 || cnpj.indexOf('/') == -1 || cnpj.indexOf('-') == -1) {
+                alert('cnpj inválido')
+                input_CNPJ.className = "invalido"
+            } else {
+                input_CNPJ.className = "valido"
+            }
+
+            if (emailemp.indexOf("@") == -1 || emailemp.endsWith(".com") == false) {
+                alert('email inválido')
+                input_email_empresarial.className = "invalido"
+            } else {
+                input_email_empresarial.className = "valido"
+            }
+
+            if (telefone.length != 14 || telefone.indexOf("(") == -1 || telefone.indexOf(")") == -1 || telefone.indexOf("-") == -1) {
+                alert('telefone invalido')
+                input_telefone.className = "invalido"
+            } else {
+                input_telefone.className = "valido"
+            }
+
+            if (cep.length != 9 || cep.indexOf("-") == -1) {
+                alert('cep invalido')
+                input_CEP.className = "invalido"
+            } else {
+                input_CEP.className = "valido"
+            }
+        }
+    }
+</script>
