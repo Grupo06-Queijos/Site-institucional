@@ -278,3 +278,7 @@ section #sessao3 {
 #btn_simuleAqui:hover{
     cursor: pointer;
 }
+
+#div_simuleAqui h2{
+    color:white;
+}
