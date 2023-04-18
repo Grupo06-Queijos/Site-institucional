@@ -114,7 +114,108 @@ p{
 
 /* <!-- Fim Estilização Home --> */
 
-/* Início do Quem Somos - Social */
+/*Começo do Nossos Serviços*/
+
+#sessao2{
+    margin:0;
+    padding: 0px;
+    text-align: center;
+    transition: 0.5s;
+    background: #ffffff;
+    min-height: 150vh;
+}
+
+#h1_nossoServico{
+    color: #000000;
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 20%;
+}
+
+.row{
+    padding-top: 50px;
+    width: 1150px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: -40px;
+}
+
+.box{
+    width: 350px;
+    height: 500px;
+    background: #ffffff;
+
+}
+
+.box h3{
+    color: #dd9e34;
+    font-size: 25px;
+}
+
+.box p{
+    padding-top: 10px;
+    line-height: 20px;
+}
+
+#div_simuleAqui{
+    background-color: #152325;
+    height: 250px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+#btn_simuleAqui{
+    border-radius: 20px;
+    margin-top: 50px;
+    border: none;
+    font-size: 15px;
+    height: 50px;
+    width: 15%;
+    background-color: #dd9e34;
+    color: white;
+    font-weight: bold;
+}
+
+#btn_simuleAqui:hover{
+    cursor: pointer;
+}
+
+#div_simuleAqui h2{
+    color:white;
+}
+
+#div_simuleAqui a{
+    color:white;
+    text-decoration: none;
+}
+
+
+#div_cadastroEmpresa{
+    align-items: center;
+}
+
+
+#div_cadastroEmpresa a{
+    color: black;
+    text-decoration: none;
+    
+}
+
+#div_cadastroEmpresa a:hover{
+    color: #dd9e34;
+    text-decoration: none;
+}
+
+
+/*Fim do Nossos Serviços*/
+
+
+
+/* Início do Quem Somos*/
 
 section #sessao3 {
 
@@ -207,19 +308,11 @@ section #sessao3 {
     border: none;
     display: flex;
 }
+/*Fim do Quem Somos*/
 
-/*Começo do Nossos Serviços*/
 
-#sessao2{
-    margin:0;
-    padding: 0px;
-    text-align: center;
-    transition: 0.5s;
-    background: #ffffff;
-    min-height: 150vh;
-}
-
-#h1_nossoServico{
+/* Início do Contato*/
+#h1_contato{
     color: #000000;
     font-size: 45px;
     font-weight: bold;
@@ -227,58 +320,57 @@ section #sessao3 {
     border-radius: 20%;
 }
 
-.row{
-    padding-top: 50px;
-    width: 1150px;
-    height: 600px;
-    margin: auto;
+
+#main_contato{
     display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin-top: -40px;
+    flex-direction: row;
 }
 
-.box{
-    width: 350px;
-    height: 500px;
-    background: #ffffff;
-
+#aside_contato{
+    margin-right: 180px;
 }
 
-.box h3{
-    color: #dd9e34;
+#article_contato{
+    margin-top: 20px;
+}
+
+#article_contato h3{
     font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 3px;
+    margin-top: 25px;
 }
 
-.box p{
-    padding-top: 10px;
+#article_contato p{
     line-height: 20px;
+    max-width: 500px;
+    font-size: 15px;
+    text-align: left;
+    margin-top: 30px;
 }
 
-#div_simuleAqui{
-    background-color: #152325;
-    height: 250px;
-    border-radius: 10px;
+#div_instagram{
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
-#btn_simuleAqui{
-    margin-top: 20px;
-    border-radius: 20px;
-    margin-top: 50px;
-    border: none;
+#div_instagram p{
+    margin-top: 7px;
+    margin-left: 5px;
     font-size: 15px;
-    height: 50px;
-    width: 15%;
-    background-color: #dd9e34;
-    color: white;
-    font-weight: bold;
 }
 
-#btn_simuleAqui:hover{
-    cursor: pointer;
+#div_facebook{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
 }
 
-#div_simuleAqui h2{
-    color:white;
+#div_facebook p{
+    margin-top: 8px;
+    margin-left: 7px;
+    font-size: 15px;
 }
