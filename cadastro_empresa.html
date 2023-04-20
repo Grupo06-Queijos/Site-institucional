@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="styles/cadastro_empresa.css">
-    <title>Cadastro Empresa | CheeseTech Solutions</title>
+    <title>Cadastro Empresa | CheeseTech Solutions/title>
 </head>
 
 <body>
@@ -22,26 +22,38 @@
                 <div id = "div_cpnj" class="text-field">
                     <label for="cnpj">CNPJ</label>
                     <input type="text" id="input_CNPJ" class = "" placeholder="XX.XXX.XXX/XXXX-XX">
+                    <div id="erro_cnpj"></div>
+                    <div id="vazio"></div>
                 </div>
                 <div id = "div_empresa" class="text-field">
                     <label for="empresa">Empresa</label>
                     <input type="text" id="input_empresa" class = "" placeholder="ex: Cheese Tech">
+                    <div id="erro_empresa"></div>
+                    <div id="vazio"></div>
                 </div>
                 <div id = "div_email" class="text-field">
                     <label for="email">Email empresarial</label>
                     <input type="text" id="input_email_empresarial" class = "" placeholder="ex: email@empresarial.com">
+                    <div id="erro_email"></div>
+                    <div id="vazio"></div>
                 </div>
                 <div id = "div_telefone" class="text-field">
                     <label for="telefone">Telefone</label>
                     <input type="text" id="input_telefone" class = "" placeholder="(XX)XXXXX-XXXX">
+                    <div id="erro_telefone"></div>
+                    <div id="vazio"></div>
                 </div>
                 <div id = "div_cep" class="text-field">
                     <label for="cep">CEP</label>
                     <input type="text" id="input_CEP" class = "" placeholder="XXXXX-XXX">
+                    <div id="erro_cep"></div>
+                    <div id="vazio"></div>
                 </div>
                 <div id = "div_qtd" class="text-field">
                     <label for="Qtd Câmara">Número de Câmaras</label>
                     <input type="number" id="input_câmaras" class = "" placeholder="ex: 5">
+                    <div id="erro_camara"></div>
+                    <div id="vazio"></div>
                 </div>
                 <button onclick='cadastro()' class="botao-cadastro">Registrar Empresa</button>
             </div>
@@ -60,36 +72,65 @@
         var cep = input_CEP.value
         var camara = input_câmaras.value
 
-        if (cnpj == "" || empresa == "" || emailemp == "" || telefone == "" || cep == "" || camara == "") {
-            alert('complete todos os campos')
-        } else {
-            if (cnpj.length != 14 || cnpj.indexOf('.') == -1 || cnpj.indexOf('/') == -1 || cnpj.indexOf('-') == -1) {
-                alert('cnpj inválido')
-                input_CNPJ.className = "invalido"
-            } else {
-                input_CNPJ.className = "valido"
-            }
+        // if (cnpj == "" || empresa == "" || emailemp == "" || telefone == "" || cep == "" || camara == "") {
+        //     alert('complete todos os campos')
+        // } else {
+        //     if (cnpj.length != 14 || cnpj.indexOf('.') == -1 || cnpj.indexOf('/') == -1 || cnpj.indexOf('-') == -1) {
+        //         alert('cnpj inválido')
+        //         input_CNPJ.className = "invalido"
+        //     } else {
+        //         input_CNPJ.className = "valido"
+        //     }
 
-            if (emailemp.indexOf("@") == -1 || emailemp.endsWith(".com") == false) {
-                alert('email inválido')
-                input_email_empresarial.className = "invalido"
-            } else {
-                input_email_empresarial.className = "valido"
-            }
+        //     if (emailemp.indexOf("@") == -1 || emailemp.endsWith(".com") == false) {
+        //         alert('email inválido')
+        //         input_email_empresarial.className = "invalido"
+        //     } else {
+        //         input_email_empresarial.className = "valido"
+        //     }
 
-            if (telefone.length != 14 || telefone.indexOf("(") == -1 || telefone.indexOf(")") == -1 || telefone.indexOf("-") == -1) {
-                alert('telefone invalido')
-                input_telefone.className = "invalido"
-            } else {
-                input_telefone.className = "valido"
-            }
+        //     if (telefone.length != 14 || telefone.indexOf("(") == -1 || telefone.indexOf(")") == -1 || telefone.indexOf("-") == -1) {
+        //         alert('telefone invalido')
+        //         input_telefone.className = "invalido"
+        //     } else {
+        //         input_telefone.className = "valido"
+        //     }
 
-            if (cep.length != 9 || cep.indexOf("-") == -1) {
-                alert('cep invalido')
-                input_CEP.className = "invalido"
-            } else {
-                input_CEP.className = "valido"
-            }
+        //     if (cep.length != 9 || cep.indexOf("-") == -1) {
+        //         alert('cep invalido')
+        //         input_CEP.className = "invalido"
+        //     } else {
+        //         input_CEP.className = "valido"
+        //     }
+        // }
+        if (empresa == "") {
+            vazio.innerHTML = `Este campo é obrigatório`
+        } else if (email == "") {
+            vazio.innerHTML == "Este campo é obrigatório"
+        } else if (telefone  == "") {
+            vazio.innerHTML == "Este campo é obrigatório" 
+        } else if (telefone == "") {
+            vazio.innerHTML = "Este campo é obrigatório" 
+        } else if (cep == "") {
+            vazio.innerHTML = "Este campo é obrigatório"
+        } else if ( camara == "") {
+            vazio.innerHTML = "Este campo é obrigatório"
+        } else if (cnpj.lenght != 14) {
+            erro_cnpj.innerHTML = `Cnpj precisa ter 14 dígitos!`
+        } else if (email.indexOf("@") == -1 || email.endsWith(".com") == false) {
+            erro_email.innerHTML = "email inválido" 
+        } else if (telefone.length != 14) {
+            telefone_erro.innerHTML = `telefone inválido! verifique se colocou o (DD) e o "-" no formato (DD)XXXXX-XXXX` 
+        } else if (cep.length !=9 || cep.indexOf("-") == -1) {
+            erro_cep.innerHTML
         }
+        else if ( empresa == "") {
+            erro_empresa = "Este campo é obrigatório"
+        }
+    
+        //  else {
+        //     alert ("Cadastro Concluído")
+                //  window.location = "" // precisa direcionar para alguma outra página?
+        
     }
 </script>
