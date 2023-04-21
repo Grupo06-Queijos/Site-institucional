@@ -93,8 +93,8 @@
 
             }
 
-            else if (!/[!@#\$%\^&\*\(\)\-_\+=\[\]{};':"\\|,.<>\/?]/.test(senha)) { 
-                erro_senha.innerHTML = 'Senha inválida!'
+            else if (!/[!@#\$%\^&\*\(\)\-_\+=\[\]{};':"\\|,.<>\/?]/.test(senha)) { /* O sinal de exclamação ! no início inverte o resultado da verificação*/
+                erro_senha.innerHTML = 'Senha inválida!' 
                 erro_senha.innerHTML +=' A senha deve conter pelo menos um caractere especial.'
                 input_senha.className = "invalido" 
             }

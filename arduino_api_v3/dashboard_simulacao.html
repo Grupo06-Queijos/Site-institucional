@@ -18,7 +18,7 @@
 <body>
     <div>
         <h1>Sensor DHT 11 - Umidade</h1>
-        <section style="width:100%">
+        <section style="width: 100%">
             <canvas id="dht11Umidade"></canvas>
         </section>
         <!-- <h1>Sensor DHT 11 - Temperatura</h1>
@@ -43,8 +43,8 @@
     <script>
         /* -- dht11Umidade -- */
         var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-        contextoDht11Umidade.canvas.width = 1000;
-        contextoDht11Umidade.canvas.height = 300;
+        contextoDht11Umidade.canvas.width = 900;
+        contextoDht11Umidade.canvas.height = 200;
         var dht11Umidade = new Chart(
             contextoDht11Umidade,
             {
@@ -52,11 +52,10 @@
                 data: {
                     labels: ['00:00','1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
                     datasets: [{
-                        label: 'Umidade',
+                        label: 'Umidade %',
                         type: 'line',
                         borderColor: ['#45b3e7'],
                         backgroundColor: ['#89cff0'],
-                        data: [75, 78, 80, 75, 85, 77],
                         fill: false,
                         tension: 0.1
             
@@ -73,7 +72,7 @@
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Umidade'
+                                labelString: 'Umidade %'
                             },
                             ticks: {
                                 beginAtZero: true
@@ -149,11 +148,10 @@
                 data: {
                     labels: ['00:00','1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
                     datasets: [{
-                        label: 'Temperatura',
+                        label: 'Temperatura °C',
                         type: 'line',
                         borderColor: ['#ff0000'],
                         backgroundColor: ['#ff0000'],
-                        data: [1, 4, 10, 15, 2, 20],
                         fill: false,
                         tension: 0.1
                     }]
@@ -169,7 +167,7 @@
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Temperatura'
+                                labelString: 'Temperatura °C'
                             },
                             ticks: {
                                 beginAtZero: true,
@@ -264,7 +262,7 @@
             obterDados(luminosidade, 'luminosidade');
             obterDados(lm35Temperatura, 'lm35/temperatura');
             obterDados(chave, 'chave');
-        }, 1000);
+        }, 2000);
 
     </script>
 </body>

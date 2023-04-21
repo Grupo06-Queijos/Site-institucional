@@ -26,13 +26,13 @@
   function calcular_perda() {
     var Preco = Number(input_preco.value);
     var Produção = Number(input_quantidade.value);
-    var PerdaQueijoSemanal = Produção*0.15;
-    var PerdaQueijoMensal = PerdaQueijoSemanal*4;
-    var PerdaQueijoAnual = PerdaQueijoMensal*12;
+    var PerdaQueijoSemanal = (Produção*0.15).toFixed(2);
+    var PerdaQueijoMensal = (PerdaQueijoSemanal*4).toFixed(2); /*.toFixed(2) = arredonda os valores para duas casas decimais após a vírgula*/
+    var PerdaQueijoAnual = (PerdaQueijoMensal*12).toFixed(2);
 
-    var PerdaFinanceiraSemanal = PerdaQueijoSemanal * Preco;
-    var PerdaFinanceiraMensal = PerdaQueijoMensal * Preco;
-    var PerdaFinanceiraAnual = PerdaQueijoAnual * Preco;
+    var PerdaFinanceiraSemanal = (PerdaQueijoSemanal * Preco).toFixed(2);
+    var PerdaFinanceiraMensal = (PerdaQueijoMensal * Preco).toFixed(2);
+    var PerdaFinanceiraAnual = (PerdaQueijoAnual * Preco).toFixed(2);
 
     div_perda.innerHTML = `
     De acordo com uma pesquisa da Universidade de Winsconsin-Madison, 
