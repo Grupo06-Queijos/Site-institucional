@@ -2,20 +2,14 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Dashboard | CheeseTech Solutions</title>
 
     <link rel="stylesheet" href="styles/style_dashboard.css">
-    <link rel="stylesheet" href="dashboards.css">
     <script src="../js/funcoes.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -26,9 +20,10 @@
 
 <body onload=" atualizarFeed()">
 
-    <div class="janela">
         <div class="header-left">
             <h1>CheeseTech</h1>
+
+            <img src="img/logo2.png" width="150px" height="150px">
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -46,112 +41,97 @@
 
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Contato</h3>
-                </a>
-            </div>
-
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
         </div>
 
+        <h2>Dashboard</h2>
+        <br>
+        <div class="btns-dash">
+            Selecione a câmara desejada:
+            <select id="select_graficos">
+                <option value="cam1">Câmara 1</option>
+                <option value="cam2">Câmara 2</option>
+                <option value="cam3">Câmara 3</option>
+                <option value="cam4">Câmara 4</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- <option value="camEscolha">Escolha uma câmara</option> -->
+  
+
         <div class="dash">
+
             <div class="KPIS">
-                <div class="KPI-temp-max">Temperatura Máxima</div>
-                <div class="KPI-temp-min">Temperatura Mínima</div>
-                <div class="KPI-umi-max">Umidade Máxima</div>
-                <div class="KPI-umi-min">Umidade Mínima</div>
-                <div class="Temp-Med">Temperatura Média</div>
-                <div class="Umi-Med">Umidade Média</div>
+                <div class="row">
+                    <h2>Temperatura Máxima</h2>
+                    <div class="KPI-temp-max">
+                        <h1>25°C</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Temperatura Mínima</h2>
+                    <div class="KPI-temp-min">
+                        <h1>19°C</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Umidade Máxima</h2>
+                    <div class="KPI-umi-max">
+                        <h1>55%</h1>
+                    </div>
+                </div>
             </div>
-            <div class="btns-dash">
-                <select name="graph" id="select_graficos">
-                    <!-- <option value="camEscolha">Escolha uma câmara</option> -->
-                    <option value="cam1">Câmara 1</option>
-                    <option value="cam2">Câmara 2</option>
-                    <option value="cam3">Câmara 3</option>
-                    <option value="cam4">Câmara 4</option>
-                </select>
-                <!-- <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Câmara 1</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Câmara 2</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(3)" id="btnAquario3">Câmara 3</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(4)" id="btnAquario4">Câmara 4</button> -->
+
+            <div class="KPIS">
+                <div class="row">
+                    <h2>Umidade Mínima</h2>
+                    <div class="KPI-umi-min">
+                        <h1>50%</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Temperatura Média</h2>
+                    <div class="Temp-Med">
+                        <h1>23°C</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2>Umidade Média</h2>
+                    <div class="Umi-Med">
+                        <h1>53%</h1>
+                    </div>
+                </div>
+                
             </div>
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <!-- <button class="btn-chart btn-pink" onclick="exibirAquario(1)" id="btnAquario1">Aquario 1</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(2)" id="btnAquario2">Aquario 2</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(3)" id="btnAquario3">Aquario 3</button>
-                <button class="btn-chart btn-white" onclick="exibirAquario(4)" id="btnAquario4">Aquario 4</button>
-            </div> -->
+            
+            <br>
+            <br>
+
+
             <div id="graficos">
                 <div>
-                    <h1>Sensor DHT 11 - Umidade</h1>
-                    <section style="width:100%">
+                    <br>
+                    <br>
+                    <h3>Sensor de Umidade</h3>
+                    <section style="width:100%; height: 450px;" >
                         <canvas id="dht11Umidade"></canvas>
                     </section>
+                    
                     <!-- <h1>Sensor DHT 11 - Temperatura</h1>
                     <section style="width: 100%;">
                         <canvas id="dht11Temperatura"></canvas> -->
                    
-                    <h1>Sensor LM 35 - Temperatura</h1>
-                    <section style="width: 100%;">
+                    <h3>Sensor de Temperatura</h3>
+                    <section style="width: 100%; height: 450px;">
                         <canvas id="lm35Temperatura"></canvas>
                     </section>
-                <div id="grafico1" class="display-block">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario1">123</span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas1"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura1" style="color: white"></p>
-                    </div>
-                </div>
-
-                <div id="grafico2" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario2"></span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas2"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura2" style="color: white"></p>
-                    </div>
-                </div>
-
-                <div id="grafico3" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario3"></span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas3"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura3" style="color: white"></p>
-                    </div>
-                </div>
-
-                <div id="grafico4" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="tituloAquario4"></span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas4"></canvas>
-                    </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura4" style="color: white"></p>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-
-
+   
 </body>
 
 </html>
@@ -160,7 +140,7 @@
      /* -- dht11Umidade -- */
      var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
         contextoDht11Umidade.canvas.width = 1000;
-        contextoDht11Umidade.canvas.height = 300;
+        contextoDht11Umidade.canvas.height = 400;
         var dht11Umidade = new Chart(
             contextoDht11Umidade,
             {
@@ -170,8 +150,8 @@
                     datasets: [{
                         label: 'Umidade',
                         type: 'line',
-                        borderColor: ['#45b3e7'],
-                        backgroundColor: ['#89cff0'],
+                        borderColor: ['#152325'],
+                        backgroundColor: ['#152325'],
                         data: [75, 78, 80, 75, 85, 77],
                         fill: false,
                         tension: 0.1
@@ -206,7 +186,7 @@
          /* -- lm35Temperatura */
          var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
         contextoLm35Temperatura.canvas.width = 1000;
-        contextoLm35Temperatura.canvas.height = 300;
+        contextoLm35Temperatura.canvas.height = 400;
         var lm35Temperatura = new Chart(
             contextoLm35Temperatura,
             {
@@ -216,8 +196,8 @@
                     datasets: [{
                         label: 'Temperatura',
                         type: 'line',
-                        borderColor: ['#ff0000'],
-                        backgroundColor: ['#ff0000'],
+                        borderColor: ['#dd9e34'],
+                        backgroundColor: ['#dd9e34'],
                         data: [1, 4, 10, 15, 2, 20],
                         fill: false,
                         tension: 0.1

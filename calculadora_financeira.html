@@ -9,6 +9,11 @@
     <title>Calculadora Financeira | CheeseTech Solutions</title>
   </head>
   <body>
+
+    <aside>
+      <img src="img/Construction costs-bro.png" height="250px" width="250px" id="img_calculadora">
+    </aside>
+
     <div class="card"> 
         <br>
         <h2>Calculadora Financeira</h2>
@@ -16,12 +21,14 @@
         <input type="number" id="input_preco"><br> <br>
         Quantidade de queijo produzida por semana(kg):
         <input type="number" id="input_quantidade"><br> <br>
-        <button onclick="calcular_perda()">CALCULAR PERDA</button> 
+        <button onclick="calcular_perda()">Calcular perda</button> 
         <br><br>
         <div id="div_perda"> </div>
     </div>
   </body>
 </html>
+
+
 <script>
   function calcular_perda() {
     var Preco = Number(input_preco.value);

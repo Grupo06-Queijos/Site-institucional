@@ -1,8 +1,102 @@
 /* pagina mural */
 
-*,
-body {
-  font-family: "Exo 2", sans-serif;
+*{
+  font-family: 'Poppins';
+ }
+
+.header-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+    background-color: #dd9e34;
+    border-right: 3px solid ;
+  background-color: #152325;
+  /* border: 3px solid pink; */
+}
+
+.header-left h1 {
+  color: #dd9e34;
+}
+
+.header-left img{
+  margin-top: -50px;
+}
+
+.hello {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hello h3 {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.hello h3 span {
+  font-weight: 800;
+}
+
+.btn-nav {
+  width: 50%;
+  height: 30px;
+  color: white;
+  background-color: #dd9e34;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white {
+  width: 50%;
+  height: 30px;
+  background-color: white;
+  border: 3px solid #dd9e34;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white h3 {
+  color: #dd9e34;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+.btn-logout {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  color: #dd9e34;
+  background-color: white;
+  border: 3px solid #dd9e34;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  margin-top: 30px;
 }
 
 .label-captura {
@@ -110,18 +204,13 @@ body {
 
 /* pagina graficos */
 
-.dash-header {
-  background-color: #212124;
-}
-
 .dash {
   width: 80%;
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #ffffff;
   height: 100vh;
-  overflow: auto;
 }
 
 .regua {
@@ -178,7 +267,7 @@ body {
   text-align: center;
   height: 180px;
   justify-content: right;
-  background-color: #212124;
+  background-color: #152325;
   font-size: 20px;
 }
 
@@ -210,6 +299,7 @@ body {
   height: 30%;
   border-radius: 50px;
   margin-top: 6%;
+  margin-right: 20px;
   /* background-color: #c7c7c7; */
 }
 
