@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
@@ -9,13 +8,8 @@
     <title>Dashboard | CheeseTech Solutions</title>
     <link rel="stylesheet" href="styles/cards.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-
-    <script src="../js/funcoes.js"></script>
-  
 </head>
-
-<body onload="validarSessao(), atualizacaoPeriodica()">
-
+<body>
         <div class="header-left dash-header">
 
             <h1>CheeseTech</h1>
@@ -36,77 +30,62 @@
                 </a>
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
+            <div class="btn-logout" >
+                <a href="./index.html">
                 <h3>Sair</h3>
+            </a>
             </div>
-
         </div>
-
         <div class="dash">
             <div class="regua">
                 <div class="item-regua perigo-frio">
                     <h4>Crítico</h4>
                     <h2>4°C</h2>
+                    <h2>78%</h2>
                 </div>
                 <div class="item-regua alerta-frio">
                     <h4>Emergência</h4>
                     <h2>6°C</h2>
+                    <h2>79%</h2>
                 </div>
                 <div class="item-regua ideal">
                     <h4>Ideal</h4>
                     <h2>7/8°C</h2>
+                    <h2>83%/84%</h2>
                 </div>
                 <div class="item-regua alerta-quente">
                     <h4>Emergência</h4>
                     <h2>9°C</h2>
+                    <h2>85%</h2>
                 </div>
                 <div class="item-regua perigo-quente">
                     <h4>Crítico</h4>
                     <h2>10°C</h2>
+                    <h2>87%</h2>
                 </div>
             </div>
-
             <div class="cards">
                 <div class="card">
-                    <h1>Média câmara 1</h1>
+                    <h1>Média geral da temperatura:<p id="temperatura_geral">10.5°C</p></h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_1">9°C</p>
+                        <p id="temperatura_geral">Alerta câmara 2</p>
                     </div>
                     <div class="cor-alerta" id="card_1"></div>
                 </div>
-                <div class="card">
-                    <h1>Média câmara 2</h1>
+                <div class="card-umidade">
+                    <h1>Média geral da umidade:<p id="umidade_geral">83%</p></h1>
                     <div class="temperatura">
-                        <p id="temp_aquario_2">6°C</p>
+                        <p id="umidade_geral">Nenhum problema</p>
                     </div>
                     <div class="cor-alerta" id="card_2"></div>
-
                 </div>
-                <div class="card">
-                    <h1>Média câmara 3</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_3">8°C</p>
-                    </div>
-                    <div class="cor-alerta ideal" id="card_3"></div>
-                </div>
-                <div class="card">
-                    <h1>Média câmara 4</h1>
-                    <div class="temperatura">
-                        <p id="temp_aquario_4">5°C</p>
-                    </div>
-                    <div class="cor-alerta" id="card_4"></div>
-                </div>
-
             </div>
-
         </div>
 
-
 </body>
-
 <script>
 
-    function atualizacaoPeriodica() {
+    /*function atualizacaoPeriodica() {
         obterdados(1);
         obterdados(2);
         obterdados(3);
@@ -201,7 +180,7 @@
         // alterando
         card.className = classe_temperatura;
 
-    }
+    }*/
 
 </script>
 
